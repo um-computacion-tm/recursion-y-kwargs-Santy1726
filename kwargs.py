@@ -1,18 +1,19 @@
+
 def buscar_datos(*args, **kwargs):
-    datos_localizados = []
+    resultado = {}
     
-    if "database" in kwargs:
-        database = kwargs["database"]
-        for arg in args:
-            found = False
-            for data in database.values():
-                if arg in data.values():
-                    datos_localizados.append(arg)
-                    found = True
-                    break 
-            if not found:
-                print(f"La palabra '{arg}' no está en la base de datos.")
-    print("Datos localizados en la base de datos:", datos_localizados)
+    for key, data in kwargs.items():
+        if sorted(data.values()) == sorted(args):
+            resultado[key] = data  
+            
+    if resultado:
+        print("Resultado encontrados:")
+        for key, value in resultado.items():
+            print(key)
+            for k, v in value.items():
+                print(f"\t{k}: {v}")
+        
+    return resultado
 
 database = {
     "persona1": {
@@ -28,8 +29,12 @@ database = {
         "primer_apellido": "Ortega",
         "segundo_apellido": "Flores"
     },
-
+    "persona3": {
+        "primer_nombre": "Juan", 
+        "segundo_nombre": "Roman",
+        "primer_apellido": "Riquelme",
+        "segundo_apellido": "Velazquez"
+    },
 }
 
-buscar_datos("Santiago","Messi","Franco","Picasso","Juan","Lautaro","Marcos", database=database)
 
