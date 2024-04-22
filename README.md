@@ -1,14 +1,12 @@
-# README DE RECURSIÓN Y KWARGS
-
 ## Factorial
-	test_factorial.py
-	Factorial.py
+- test_factorial.py
+- Factorial.py
 ## Recursión
-	test_recursion.py
-	recursion.py
+- test_recursion.py
+- recursion.py
 ## kwargs
-	test_kwargs.py
-	kwargs.py
+- test_kwargs.py
+- kwargs.py
 ## Requisitos
 	python3.10.12
 ## Autor
